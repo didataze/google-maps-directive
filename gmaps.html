@@ -1,2 +1,11 @@
 <div class="gmaps"></div>
 <legend ng-transclude></legend>
+<form name="form" ng-submit="addMarker()">
+    <input type="text" ng-model="markerLabel" required>
+    <input type="submit" value="Placer un marqueur" ng-disabled="form.$invalid">
+</form>
+
+<p>
+    <button ng-repeat="pos in positions"
+    ng-click="goto(pos)">{{pos.label}}</button>
+</p>
